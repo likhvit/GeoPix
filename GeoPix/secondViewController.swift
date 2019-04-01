@@ -5,5 +5,5 @@ import MapKit
 
 
 protocol SecondViewControllerDelegate {
-    func didUpdate (annnotation: CustomAnnotation)
+  
 }

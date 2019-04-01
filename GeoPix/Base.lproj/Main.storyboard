@@ -42,7 +42,7 @@
         <!--View Controller-->
         <scene sceneID="4FZ-SX-gri">
             <objects>
-                <viewController id="522-4I-vZu" sceneMemberID="viewController">
+                <viewController id="522-4I-vZu" customClass="ViewController" customModule="GeoPix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ra2-XB-TO0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
