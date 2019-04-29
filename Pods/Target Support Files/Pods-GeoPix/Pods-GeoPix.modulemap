@@ -1,0 +1,6 @@
+framework module Pods_GeoPix {
+  umbrella header "Pods-GeoPix-umbrella.h"
+
+  export *
+  module * { export * }
+}

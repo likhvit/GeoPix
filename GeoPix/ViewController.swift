@@ -1,6 +1,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -23,10 +24,19 @@ class ViewController: UIViewController {
         let coordinate = CLLocationCoordinate2D(latitude: 50.716088, longitude: -1.874064)
         let region = CLCircularRegion(center: coordinate, radius: 300, identifier: "One")
         locationManager.startMonitoring(for: region)
-
-
+        
+        func loadLocations() {
+            let ref = Firestore.firestore().collection("locations")
+            ref.getDocuments { snapshot, error in
+                for document in snapshot!.documents {
+                    print(document.data())
+                }
+            }
+        }
 
 }
+    }
+    
 
     
 }
@@ -46,4 +56,4 @@ class ViewController: UIViewController {
         }
         
 }
-}
+
