@@ -41,6 +41,10 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         meta.contentType = "image/jpeg"
         ref.putData(data, metadata: meta) { meta, error in
             completion(meta?.name)
+<<<<<<< HEAD
+            
+=======
+>>>>>>> 5cba91edce46c9f39c07c30e51cb34aaa8e6ed4f
         }
             
     }
