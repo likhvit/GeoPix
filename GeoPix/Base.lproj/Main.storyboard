@@ -36,9 +36,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O54-6D-1Ik">
-                                <rect key="frame" x="164" y="249" width="46" height="30"/>
+                                <rect key="frame" x="149" y="536" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Select a picture"/>
                                 <connections>
                                     <action selector="importButton:" destination="vUD-VI-1xW" eventType="touchUpInside" id="Lad-l5-JYo"/>
                                 </connections>
