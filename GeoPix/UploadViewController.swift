@@ -9,9 +9,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     var selectedImage: UIImage?
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         post()
-        
         
     }
     func post() {
@@ -42,7 +40,10 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         meta.contentType = "image/jpeg"
         ref.putData(data, metadata: meta) { meta, error in
             completion(meta?.name)
+<<<<<<< HEAD
             
+=======
+>>>>>>> 5cba91edce46c9f39c07c30e51cb34aaa8e6ed4f
         }
             
     }
@@ -57,8 +58,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             } else {
                 print("camera not available")
             }
-            image.sourceType =
-            UIImagePickerController.SourceType.photoLibrary
+            image.sourceType = UIImagePickerController.SourceType.photoLibrary
             image.allowsEditing = false
             self.present(image, animated: true){
                 
