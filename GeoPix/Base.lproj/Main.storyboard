@@ -51,6 +51,7 @@
                         <outlet property="imageDescription" destination="0vO-TS-w4x" id="epu-Lh-AI9"/>
                         <outlet property="imagePicker" destination="U8p-hV-OSO" id="eKk-x5-sP2"/>
                         <outlet property="uploadDate" destination="fGg-JB-wpK" id="vIa-bc-utJ"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" id="gYP-Ch-uYj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2j-Ha-y9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,6 +79,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="tsA-gj-Kpg"/>
                     <connections>
                         <outlet property="mapView" destination="fLD-iM-IcO" id="86b-cf-cQl"/>
                         <segue destination="522-4I-vZu" kind="show" id="zze-5F-ycg"/>
