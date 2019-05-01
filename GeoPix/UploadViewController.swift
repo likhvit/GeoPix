@@ -34,7 +34,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     }
     
-    func upload(_ image: UIImage, completion: @escaping (string?) -> Void) {
+    func upload(_ image: UIImage, completion: @escaping (String?) -> Void) {
         let data = image.jpegData(compressionQuality: 0.6)
         let uuid = UUID().uuidString
         let ref = Storage.storage().reference(withPath: uuid)
@@ -42,38 +42,30 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         meta.contentType = "imagejpeg"
         ref.putData(data, metadata: meta) { meta, error in completion(meta?.name)
             
-    }
-    
-    @IBAction func importButton(_ sender: Any) {
-        let image = UIImagePickerController()
-        image.delegate = self
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            image.sourceType = .camera
-            self.present (image, animated: true, completion: nil)
-        } else {
-            print("Camera not available")
         }
-        
-        image.sourceType =
-            UIImagePickerController.SourceType.photoLibrary
-        image.allowsEditing = false
-        self.present(image, animated: true){
             
-        }
     }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            imagePicker.image = image
-        } else{
-            //error
-        }
-        self.dismiss(animated: true, completion: nil)
-        
-    }
-
     
+        @IBAction func importButton( sender:Any) {
+            let image = UIImagePickerController()
+            image.delegate = self
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                image.sourceType = .camera
+                self.present (image, animated: true, completion: nil)
+            } else {
+                print("camera not available")
+            }
+            image.sourceType =
+            UIImagePickerController.SourceType.photoLibrary
+            image.allowsEditing = false
+            self.present(image, animated: true){
+                
+            }
+   }
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
+            selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            self.dismiss(animated: true, completion: nil)
+        }
 }
 
-
-/// test
