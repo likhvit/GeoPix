@@ -34,7 +34,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     }
     
-    func upload(_ image: UIImage, completion: @escaping (string?) -> Void) {
+    func upload(_ image: UIImage, completion: @escaping (String?) -> Void) {
         let data = image.jpegData(compressionQuality: 0.6)
         let uuid = UUID().uuidString
         let ref = Storage.storage().reference(withPath: uuid)
