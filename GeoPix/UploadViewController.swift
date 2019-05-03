@@ -27,7 +27,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             ]
             
             ref.setData(dict) { error in
-                print("Image uplaoded successfully")
+                print("Image uploaded successfully")
                 
             }
     }
