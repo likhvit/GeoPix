@@ -9,10 +9,13 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var uploadDate: UILabel!
     var selectedImage: UIImage?
     
+    //calls post function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         post()
         
     }
+    //post function that is called above, which executes the following code
+    //it takes the image that has been selected and is stored in the "selectedImage" function and uses the upload function to store it on firebase
     func post() {
         guard let selectedImage = selectedImage else { return }
         
@@ -32,7 +35,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             }
         }
     }
-    
+    //upload function which is called during the post function. Takes the image, gives it a random string for its file name with the uuii variable and also stores metadata on the file. A random string is needed for the file name as if there wasnt then it would be posible for images to overwrite each other.
     func upload(_ image: UIImage, completion: @escaping (String?) -> Void) {
         let data = image.jpegData(compressionQuality: 0.6)!
         let uuid = UUID().uuidString
@@ -45,10 +48,11 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             
     }
     
+    //code for the import button that is seen on the first view controller. Opens up the user interface for picking an image and once one is picked it will upload it 
         @IBAction func importButton( sender:Any) {
             let image = UIImagePickerController()
             image.delegate = self
-            
+            //checks to see if the camera is available, if it is the code is executed. If anything else (camera isnt available) then the code in the else statement is executes which gives an error message saying the camera isnt available.
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                 image.sourceType = .camera
                 self.present (image, animated: true, completion: nil)
