@@ -61,9 +61,13 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
                 
             }
    }
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]){
-            selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            self.dismiss(animated: true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            imagePicker.image = image
+        } else{
+
         }
+        self.dismiss(animated: true, completion: nil)
 }
 
+}
