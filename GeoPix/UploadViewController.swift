@@ -46,10 +46,59 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         //declares the content type
         meta.contentType = "image/jpeg"
         
+        
+        //photo reference
         ref.putData(data, metadata: meta) { meta, error in
             completion(meta?.name)
         }
-            
+        // Get a reference to the storage service using the default Firebase App
+        let storage = Storage.storage()
+        
+        // Create a storage reference from our storage service
+        let storageRef = storage.reference()
+        // Parent allows us to move to the parent of a reference
+        
+        //Photo Download
+        // Create a reference with an initial file path and name
+       // let pathReference = Storage.reference(withPath: "images/jpg")
+        
+        // Create a reference to the file you want to download
+        let ref = storageRef.child("images/jpg")
+        
+        // Fetch the download URL
+        starsRef.downloadURL { url, error in
+            if let error = error {
+                // Handle any errors
+            } else {
+                // Get the download URL for 'images/stars.jpg'
+            }
+        }
+        
+        //Photo Upload
+        // Data in memory
+      // Create a reference to the file you want to upload
+        let riversRef = storageRef.child("images/rivers.jpg")
+        
+        // Upload the file to the path "images/rivers.jpg"
+        let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            // You can also access to download URL after upload.
+            riversRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+            }
+        }
+        
+        
+        
+        
     }
     
     //code for the import button that is seen on the first view controller. Opens up the user interface for picking an image and once one is picked it will upload it 
