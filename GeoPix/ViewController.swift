@@ -14,9 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //determines user location
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
+<<<<<<< HEAD
 
         mapView.userTrackingMode = .follow
         
@@ -33,11 +35,15 @@ class ViewController: UIViewController {
 //        locationManager.startMonitoring(for: region)
 
 
+=======
+        
+        //the regeion in which users can use the app and upload pictures of bournemouth
+>>>>>>> d1fa2b7fe395d013081193984b40135418e57723
         let coordinate = CLLocationCoordinate2D(latitude: 50.716088, longitude: -1.874064)
         let region = CLCircularRegion(center: coordinate, radius: 300, identifier: "One")
         locationManager.startMonitoring(for: region)
     
-        
+        //locations in firestore
         func loadLocations() {
             let ref = Firestore.firestore().collection("locations")
             ref.getDocuments { snapshot, error in
@@ -54,6 +60,10 @@ class ViewController: UIViewController {
         uploadImage = false
     }
 
+<<<<<<< HEAD
+=======
+    //extension which is needed to preevent errors
+>>>>>>> d1fa2b7fe395d013081193984b40135418e57723
 }
 
     extension ViewController: CLLocationManagerDelegate {
