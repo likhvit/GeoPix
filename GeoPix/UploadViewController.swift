@@ -45,7 +45,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         let meta = StorageMetadata()
         //declares the content type
         meta.contentType = "image/jpeg"
-        
+         
         ref.putData(data, metadata: meta) { meta, error in
             completion(meta?.name)
         }

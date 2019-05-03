@@ -78,6 +78,7 @@ class ViewController: UIViewController {
                 performSegue(withIdentifier: "upload", sender: nil)
             }
         }
+        
         func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
             print("Left: \(region.identifier)")
         }

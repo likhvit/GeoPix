@@ -4,6 +4,7 @@ import Firebase
 
 class CustomAnnotation: NSObject, MKAnnotation {
     
+    //variable which stores the coordinate
     var coordinate: CLLocationCoordinate2D
     var title: String?
     
