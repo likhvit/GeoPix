@@ -32,6 +32,11 @@ class ViewController: UIViewController {
         mapView.setRegion(region, animated: true)
 //        locationManager.startMonitoring(for: region)
 
+
+        let coordinate = CLLocationCoordinate2D(latitude: 50.716088, longitude: -1.874064)
+        let region = CLCircularRegion(center: coordinate, radius: 300, identifier: "One")
+        locationManager.startMonitoring(for: region)
+    
         
         func loadLocations() {
             let ref = Firestore.firestore().collection("locations")
