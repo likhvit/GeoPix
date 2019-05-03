@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>991102086031-ji1q3f0ump8jeuornd98ud9ae2ba45bt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.991102086031-ji1q3f0ump8jeuornd98ud9ae2ba45bt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBbrerKJDeJAEDj50km7ercES2m62V8JNE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>991102086031</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>-120396.GeoPix</string>
+	<key>PROJECT_ID</key>
+	<string>geopix-31117</string>
+	<key>STORAGE_BUCKET</key>
+	<string>geopix-31117.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:991102086031:ios:9f2ceeea467fac4a</string>
+	<key>DATABASE_URL</key>
+	<string>https://geopix-31117.firebaseio.com</string>
+</dict>
+</plist>
