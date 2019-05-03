@@ -37,11 +37,15 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     //upload function which is called during the post function. Takes the image, gives it a random string for its file name with the uuii variable and also stores metadata on the file. A random string is needed for the file name as if there wasnt then it would be posible for images to overwrite each other.
     func upload(_ image: UIImage, completion: @escaping (String?) -> Void) {
+        //compresses the file
         let data = image.jpegData(compressionQuality: 0.6)!
+        //gives a random string to the uploaded image
         let uuid = UUID().uuidString
         let ref = Storage.storage().reference(withPath: uuid)
         let meta = StorageMetadata()
+        //declares the content type
         meta.contentType = "image/jpeg"
+        
         ref.putData(data, metadata: meta) { meta, error in
             completion(meta?.name)
         }

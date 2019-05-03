@@ -35,6 +35,14 @@ class ViewController: UIViewController {
         
         //the regeion in which users can use the app and upload pictures of bournemouth
 //        locationManager.startMonitoring(for: region)
+
+
+        
+        //the regeion in which users can use the app and upload pictures of bournemouth
+        for annotation in annotations {
+            let region = CLCircularRegion(center: annotation.coordinate, radius: 100, identifier: annotation.title!)
+        locationManager.startMonitoring(for: region)
+        }
     
         //locations in firestore
         func loadLocations() {
@@ -56,6 +64,7 @@ class ViewController: UIViewController {
     //extension which is needed to preevent errors
 }
 
+    //extension which is needed to preevent errors
     extension ViewController: CLLocationManagerDelegate {
         
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -74,4 +83,5 @@ class ViewController: UIViewController {
         }
         
 }
+
 
