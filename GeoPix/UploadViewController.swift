@@ -199,3 +199,4 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     }
 
 }
+>>>>>>> fda4783b467ea8894c32f4404e95eaa66087cae5
