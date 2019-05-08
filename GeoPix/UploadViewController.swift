@@ -58,29 +58,26 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             let image = UIImagePickerController()
             image.delegate = self
             //checks to see if the camera is available, if it is the code is executed. If anything else (camera isnt available) then the code in the else statement is executes which gives an error message saying the camera isnt available.
-            if UIImagePickerController.isSourceTypeAvailable(.camera){
-                image.sourceType = .camera
-                self.present (image, animated: true, completion: nil)
-            } else {
-                print("camera not available")
+    if UIImagePickerController.isSourceTypeAvailable(.camera){
+        image.sourceType = .camera
+            self.present (image, animated: true, completion: nil)
+                } else {
+            print("camera not available")
             }
-            image.sourceType = UIImagePickerController.SourceType.photoLibrary
-            image.allowsEditing = false
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
             self.present(image, animated: true){
                 
             }
    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             imagePicker.image = image
-            upload(image) { _ in
-                
-            }
-        } else{
-
+            upload(image) { _ in}
+                } else{
         }
-        self.dismiss(animated: true, completion: nil)
+    self.dismiss(animated: true, completion: nil)
         
-}
+    }
 
 }
