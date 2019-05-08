@@ -1,6 +1,10 @@
 import UIKit
 import Firebase
 
+//protocol SecondViewControllerDelegate {
+//    func didUpdate(annotation: CustomAnnotation)
+//}
+
 class UploadViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imagePicker: UIImageView!

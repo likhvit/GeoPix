@@ -20,3 +20,4 @@ class CustomAnnotation: NSObject, MKAnnotation {
     }
     
 }
+

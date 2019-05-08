@@ -18,7 +18,9 @@ class ViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-
+        
+//        mapView.delegate = self
+        
 //        mapView.userTrackingMode = .follow
 
         loadLocations()
@@ -65,10 +67,15 @@ class ViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        uploadImage = false
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        uploadImage = false
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let vc = segue.destination as! UploadViewController
+//        vc.annotation = sender as? CustomAnnotation
+//    }
 
     //extension which is needed to preevent errors
 }
@@ -86,5 +93,13 @@ class ViewController: UIViewController {
         }
         
 }
+
+//extension ViewController: MKMapViewDelegate {
+//    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        let annotation = view.annotation!
+//        performSegue(withIdentifier: "upload", sender: annotation)
+//    }
+//
+//}
 
 
