@@ -10,6 +10,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var uploadDate: UILabel!
     var selectedImage: UIImage?
     
+    //calls post function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         post()
         
@@ -34,6 +35,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
                 
             }
         }
+<<<<<<< HEAD
     }
 <<<<<<< HEAD
     }
@@ -123,11 +125,33 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         
     }
     
+=======
+    }
+    
+    //upload function which is called during the post function. Takes the image, gives it a random string for its file name with the uuii variable and also stores metadata on the file. A random string is needed for the file name as if there wasnt then it would be posible for images to overwrite each other.
+    func upload(_ image: UIImage, completion: @escaping (String?) -> Void) {
+        //compresses the file
+        let data = image.jpegData(compressionQuality: 0.6)!
+        //gives a random string to the uploaded image
+        let uuid = UUID().uuidString
+        let ref = Storage.storage().reference(withPath: uuid)
+        let meta = StorageMetadata()
+        //declares the content type
+        meta.contentType = "image/jpeg"
+
+        ref.putData(data, metadata: meta) { meta, error in
+            print("upload finsihed")
+            completion(uuid)
+        }
+    }
+    
+>>>>>>> fda4783b467ea8894c32f4404e95eaa66087cae5
     //code for the import button that is seen on the first view controller. Opens up the user interface for picking an image and once one is picked it will upload it 
         @IBAction func importButton( sender:Any) {
             let image = UIImagePickerController()
             image.delegate = self
             //checks to see if the camera is available, if it is the code is executed. If anything else (camera isnt available) then the code in the else statement is executes which gives an error message saying the camera isnt available.
+<<<<<<< HEAD
             if UIImagePickerController.isSourceTypeAvailable(.camera){
                 image.sourceType = .camera
                 self.present (image, animated: true, completion: nil)
@@ -136,13 +160,24 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             }
             image.sourceType = UIImagePickerController.SourceType.photoLibrary
             image.allowsEditing = false
+=======
+    if UIImagePickerController.isSourceTypeAvailable(.camera){
+        image.sourceType = .camera
+            self.present (image, animated: true, completion: nil)
+                } else {
+            print("camera not available")
+            }
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+>>>>>>> fda4783b467ea8894c32f4404e95eaa66087cae5
             self.present(image, animated: true){
                 
             }
    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             imagePicker.image = image
+<<<<<<< HEAD
         } else{
 
         }
@@ -155,3 +190,13 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
 =======
 >>>>>>> b89be69e954aee10da2c28620e37d310f05c633f
 }
+=======
+            upload(image) { _ in}
+                } else{
+        }
+    self.dismiss(animated: true, completion: nil)
+        
+    }
+
+}
+>>>>>>> fda4783b467ea8894c32f4404e95eaa66087cae5
