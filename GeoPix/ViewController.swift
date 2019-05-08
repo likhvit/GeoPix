@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         //sets the map to the Region and it is animated as it moves to it
 //        let coordinate = CLLocationCoordinate2D(latitude: 50.714967, longitude: -1.875129)
 //        let annotation = CustomAnnotation(coordinate: coordinate, title: "Pier")
-//        
+//
 //        let newCoordinate = CLLocationCoordinate2D(latitude: 50.742192, longitude: -1.895961)
 //        let newAnnotation = CustomAnnotation(coordinate: newCoordinate, title: "University")
         
@@ -49,8 +49,8 @@ class ViewController: UIViewController {
             let ref = Firestore.firestore().collection("locations")
             ref.getDocuments { snapshot, error in
                 for document in snapshot!.documents {
-                let annotations = CustomAnnotation(document: document)
-                    self.mapView.addAnnotations(annotations)
+                    let annotation = CustomAnnotation(document: document)
+                    self.mapView.addAnnotation(annotation)
                 }
             }
         }
