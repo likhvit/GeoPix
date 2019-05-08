@@ -1,6 +1,7 @@
 import UIKit
 import Firebase
 
+
 class UploadViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imagePicker: UIImageView!
@@ -34,17 +35,17 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     }
     
-    func upload(_ image: UIImage, completion: @escaping (string?) -> Void) {
+    func upload(_ image: UIImage, completion: @escaping (String?) -> Void) {
         let data = image.jpegData(compressionQuality: 0.6)
         let uuid = UUID().uuidString
         let ref = Storage.storage().reference(withPath: uuid)
         let meta = StorageMetadata()
         meta.contentType = "imagejpeg"
-        ref.putData(data, metadata: meta) { meta, error in completion(meta?.name)
+        ref.putData(data ?? <#default value#>, metadata: meta) { meta, error in completion(meta?.name)
             
     }
     
-    @IBAction func importButton(_ sender: Any) {
+        func importButton(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
         
@@ -77,3 +78,4 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
 
 
 /// test
+}
