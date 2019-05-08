@@ -145,7 +145,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
->>>>>>> fda4783b467ea8894c32f4404e95eaa66087cae5
+>>>>>>>fda4783b467ea8894c32f4404e95eaa66087cae5
     //code for the import button that is seen on the first view controller. Opens up the user interface for picking an image and once one is picked it will upload it 
         @IBAction func importButton( sender:Any) {
             let image = UIImagePickerController()
@@ -190,13 +190,14 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
 =======
 >>>>>>> b89be69e954aee10da2c28620e37d310f05c633f
 }
-=======
-            upload(image) { _ in}
-                } else{
+        =======upload(image) { _ in}
+            { else{
         }
     self.dismiss(animated: true, completion: nil)
         
-    }
 
+
+
+>>>>>>>fda4783b467ea8894c32f4404e95eaa66087cae5
 }
->>>>>>> fda4783b467ea8894c32f4404e95eaa66087cae5
+}
