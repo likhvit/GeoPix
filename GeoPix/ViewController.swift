@@ -30,6 +30,10 @@ class ViewController: UIViewController {
         let newCoordinate = CLLocationCoordinate2D(latitude: 50.742192, longitude: -1.895961)
         let newAnnotation = CustomAnnotation(coordinate: newCoordinate, title: "University")
         
+        let newCoordinate = CLLocationCoordinate2D(latitude: 50.727222, longitude: -1.864300)
+        let newAnnotation = CustomAnnotation(coordinate: newCoordinate, title: "station")
+            
+        
         mapView.setRegion(region, animated: true)
 //        locationManager.startMonitoring(for: region)
         
