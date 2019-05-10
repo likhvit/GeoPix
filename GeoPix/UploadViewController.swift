@@ -78,6 +78,9 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             
         }
     }
+    @IBAction func uploadButton(_ sender: Any) {
+        
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             imagePicker.image = image
@@ -89,6 +92,19 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         }
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! UploadViewController
+        vc.annotations = sender as? CustomAnnotation
+    }
+    
+}
+
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let annotation = view.annotation!
+        performSegue(withIdentifier: "upload", sender: annotation)
     }
     
 }
