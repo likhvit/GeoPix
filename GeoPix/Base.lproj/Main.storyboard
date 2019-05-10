@@ -132,17 +132,13 @@
                                 <state key="normal" title="UPLOAD"/>
                                 <connections>
                                     <action selector="uploadButton:" destination="g9e-hH-NYv" eventType="touchUpInside" id="1U7-3O-ADD"/>
-                                    <action selector="uploadButton:" destination="Jwq-Qs-7WJ" eventType="touchUpInside" id="Us9-u8-p6m"/>
+                                    <segue destination="vUD-VI-1xW" kind="show" id="sk9-j8-rwz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Iwh-gP-hUC"/>
                     </view>
-                    <connections>
-                        <outlet property="uploadButton" destination="OZa-YR-fgw" id="eJe-yB-tk3"/>
-                        <segue destination="vUD-VI-1xW" kind="show" identifier="upload" id="ACk-U9-gQm"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6r-cJ-Gpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="g9e-hH-NYv" userLabel="Exit" sceneMemberID="exit"/>

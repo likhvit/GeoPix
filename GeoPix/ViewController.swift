@@ -69,7 +69,7 @@ class ViewController: UIViewController {
 //    }
 //
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! UploadViewController
+        let vc = segue.destination as! PictureViewController
         vc.annotations = sender as? CustomAnnotation
     }
 
