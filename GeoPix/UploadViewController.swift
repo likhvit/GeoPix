@@ -11,6 +11,8 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var imageDescription: UILabel!
     @IBOutlet weak var imageQuote: UITextField!
     @IBOutlet weak var uploadDate: UILabel!
+    @IBOutlet weak var postButton: UIButton!
+    
     var selectedImage: UIImage?
     
     var annotations: CustomAnnotation!
@@ -77,6 +79,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             
         }
     }
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             imagePicker.image = image
@@ -88,6 +91,11 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         }
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! UploadViewController
+        vc.annotations = sender as? CustomAnnotation
     }
     
 }
