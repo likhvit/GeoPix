@@ -92,7 +92,7 @@ class ViewController: UIViewController {
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let annotation = view.annotation!
-        performSegue(withIdentifier: "upload", sender: annotation)
+        performSegue(withIdentifier: "picture", sender: annotation)
     }
 
 }

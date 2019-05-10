@@ -78,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2j-Ha-y9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2382" y="-430"/>
+            <point key="canvasLocation" x="3073" y="-430"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -104,7 +104,7 @@
                     <navigationItem key="navigationItem" id="tsA-gj-Kpg"/>
                     <connections>
                         <outlet property="mapView" destination="fLD-iM-IcO" id="86b-cf-cQl"/>
-                        <segue destination="vUD-VI-1xW" kind="show" identifier="upload" id="Uox-De-4wV"/>
+                        <segue destination="Jwq-Qs-7WJ" kind="show" identifier="picture" id="Lck-Hf-4Uw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -118,13 +118,27 @@
                     <view key="view" contentMode="scaleToFill" id="UfT-CK-4NE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZa-YR-fgw">
+                                <rect key="frame" x="157" y="112" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="UPLOAD"/>
+                                <connections>
+                                    <action selector="uploadButton:" destination="g9e-hH-NYv" eventType="touchUpInside" id="1U7-3O-ADD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Iwh-gP-hUC"/>
                     </view>
+                    <connections>
+                        <segue destination="vUD-VI-1xW" kind="show" identifier="upload" id="ACk-U9-gQm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6r-cJ-Gpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="g9e-hH-NYv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3204" y="-869"/>
+            <point key="canvasLocation" x="2292" y="-430"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AC4-Dz-7uA">
