@@ -8,16 +8,17 @@ import Firebase
 class UploadViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imagePicker: UIImageView!
-    @IBOutlet weak var imageDescription: UILabel!
     @IBOutlet weak var imageQuote: UITextField!
-    @IBOutlet weak var uploadDate: UILabel!
+    
+    
+    //inside view did load
+    //label.text = customaAnn.name
+    //label.text = "\(customAnn.name!)"
 
     
     var selectedImage: UIImage?
     
     var annotations: CustomAnnotation!
-    
-    //calls post function
    
     //post function that is called above, which executes the following code
     //it takes the image that has been selected and is stored in the "selectedImage" function and uses the upload function to store it on firebase
@@ -27,10 +28,12 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         upload(selectedImage) { imageName in
             guard let imageName = imageName else { return }
             let ref = Firestore.firestore().collection("posts").document()
+//            guard let title = title else { return }
+//            let ref = Firestore.firestore().collection("posts").document()
             
             //metadata for each picture that is uploaded
             let dict: [String: Any] = [
-                "name": "Bournemouth",
+                "name": "",
                 "coordinates": GeoPoint(latitude: 0, longitude: 0),
                 "imageRef": imageName
             ]
@@ -42,6 +45,10 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
+    @IBAction func quoteWriter(_ sender: Any) {
+        post()
+    }
+    //calls post function
     @IBAction func postButton(_ sender: Any) {
         post()
     }

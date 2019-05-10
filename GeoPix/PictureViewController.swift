@@ -3,12 +3,9 @@ import Firebase
 
 class PictureViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageQuote: UILabel!
     var annotations: CustomAnnotation!
-   
-//    @IBAction func uploadButton(_ sender: Any) {
-//        let annotation = view.annotation!
-//        performSegue(withIdentifier: "upload", sender: annotation)
-//    }
     
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! UploadViewController
