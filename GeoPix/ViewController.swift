@@ -35,10 +35,9 @@ class ViewController: UIViewController {
         mapView.setRegion(region, animated: true)
 //        locationManager.startMonitoring(for: region)
 
-        
-        //the regeion in which users can use the app and upload pictures of bournemouth
+    
 
-        //the regeion in which users can use the app and upload pictures of bournemouth
+        //the region in which users can use the app and upload pictures of bournemouth
         for annotation in annotations {
             let region = CLCircularRegion(center: annotation.coordinate, radius: 300, identifier: annotation.title!)
         locationManager.startMonitoring(for: region)
@@ -70,10 +69,9 @@ class ViewController: UIViewController {
         vc.annotations = sender as? CustomAnnotation
     }
 
-    //extension which is needed to preevent errors
 }
 
-    //extension which is needed to preevent errors
+    //extension which is needed to prevent errors
     extension ViewController: CLLocationManagerDelegate {
         
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
