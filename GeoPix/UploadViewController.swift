@@ -11,17 +11,14 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var imageDescription: UILabel!
     @IBOutlet weak var imageQuote: UITextField!
     @IBOutlet weak var uploadDate: UILabel!
-    @IBOutlet weak var postButton: UIButton!
+
     
     var selectedImage: UIImage?
     
     var annotations: CustomAnnotation!
     
     //calls post function
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        post()
-        
-    }
+   
     //post function that is called above, which executes the following code
     //it takes the image that has been selected and is stored in the "selectedImage" function and uses the upload function to store it on firebase
     func post() {
@@ -45,6 +42,9 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
+    @IBAction func postButton(_ sender: Any) {
+        post()
+    }
     //upload function which is called during the post function. Takes the image, gives it a random string for its file name with the uuii variable and also stores metadata on the file. A random string is needed for the file name as if there wasnt then it would be posible for images to overwrite each other.
     func upload(_ image: UIImage, completion: @escaping (String?) -> Void) {
         //compresses the file
