@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1402" y="-430"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture View Controller-->
         <scene sceneID="cx8-ph-Duf">
             <objects>
-                <viewController id="Jwq-Qs-7WJ" sceneMemberID="viewController">
+                <viewController id="Jwq-Qs-7WJ" customClass="PictureViewController" customModule="GeoPix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UfT-CK-4NE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,6 +125,7 @@
                                 <state key="normal" title="UPLOAD"/>
                                 <connections>
                                     <action selector="uploadButton:" destination="g9e-hH-NYv" eventType="touchUpInside" id="1U7-3O-ADD"/>
+                                    <action selector="uploadButton:" destination="Jwq-Qs-7WJ" eventType="touchUpInside" id="Us9-u8-p6m"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,6 +133,7 @@
                         <viewLayoutGuide key="safeArea" id="Iwh-gP-hUC"/>
                     </view>
                     <connections>
+                        <outlet property="uploadButton" destination="OZa-YR-fgw" id="eJe-yB-tk3"/>
                         <segue destination="vUD-VI-1xW" kind="show" identifier="upload" id="ACk-U9-gQm"/>
                     </connections>
                 </viewController>
