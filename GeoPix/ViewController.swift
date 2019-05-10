@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 
         //the regeion in which users can use the app and upload pictures of bournemouth
         for annotation in annotations {
-            let region = CLCircularRegion(center: annotation.coordinate, radius: 100, identifier: annotation.title!)
+            let region = CLCircularRegion(center: annotation.coordinate, radius: 300, identifier: annotation.title!)
         locationManager.startMonitoring(for: region)
             print("entered location")
         }
