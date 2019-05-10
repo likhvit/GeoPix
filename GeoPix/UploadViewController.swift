@@ -31,6 +31,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             guard let imageName = imageName else { return }
             let ref = Firestore.firestore().collection("posts").document()
             
+            //metadata for each picture that is uploaded
             let dict: [String: Any] = [
                 "name": "Bournemouth",
                 "coordinates": GeoPoint(latitude: 0, longitude: 0),
