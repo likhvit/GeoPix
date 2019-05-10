@@ -11,6 +11,8 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var imageDescription: UILabel!
     @IBOutlet weak var imageQuote: UITextField!
     @IBOutlet weak var uploadDate: UILabel!
+    @IBOutlet weak var postButton: UIButton!
+    
     var selectedImage: UIImage?
     
     var annotations: CustomAnnotation!

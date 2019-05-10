@@ -52,6 +52,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os0-9B-3Da">
+                                <rect key="frame" x="328" y="617" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -61,7 +65,9 @@
                             <constraint firstItem="0vO-TS-w4x" firstAttribute="leading" secondItem="S2g-Wx-lRk" secondAttribute="leadingMargin" id="L50-6X-ZUf"/>
                             <constraint firstItem="O54-6D-1Ik" firstAttribute="leading" secondItem="1J2-UW-O8p" secondAttribute="leading" constant="131" id="Lul-Bz-Qm4"/>
                             <constraint firstItem="U8p-hV-OSO" firstAttribute="leading" secondItem="S2g-Wx-lRk" secondAttribute="leading" id="OEZ-3k-Hc9"/>
+                            <constraint firstAttribute="bottom" secondItem="os0-9B-3Da" secondAttribute="bottom" constant="20" symbolic="YES" id="VSS-IS-QFa"/>
                             <constraint firstItem="1J2-UW-O8p" firstAttribute="trailing" secondItem="O54-6D-1Ik" secondAttribute="trailing" constant="135" id="XBO-Vc-SjN"/>
+                            <constraint firstItem="os0-9B-3Da" firstAttribute="trailing" secondItem="6eh-tz-TzZ" secondAttribute="trailing" id="XzD-Ps-SDh"/>
                             <constraint firstItem="U8p-hV-OSO" firstAttribute="top" secondItem="S2g-Wx-lRk" secondAttribute="top" id="dTr-yZ-8vx"/>
                             <constraint firstItem="6eh-tz-TzZ" firstAttribute="leading" secondItem="1J2-UW-O8p" secondAttribute="leading" constant="24" id="jlA-6b-JUd"/>
                             <constraint firstAttribute="trailing" secondItem="U8p-hV-OSO" secondAttribute="trailing" id="kPf-Fp-lCB"/>
@@ -73,6 +79,7 @@
                     <connections>
                         <outlet property="imagePicker" destination="U8p-hV-OSO" id="eKk-x5-sP2"/>
                         <outlet property="imageQuote" destination="6eh-tz-TzZ" id="Hon-kO-mhe"/>
+                        <outlet property="postButton" destination="os0-9B-3Da" id="zWq-DE-9ZC"/>
                         <outlet property="uploadDate" destination="fGg-JB-wpK" id="vIa-bc-utJ"/>
                     </connections>
                 </viewController>
