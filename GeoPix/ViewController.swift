@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         mapView.userTrackingMode = .follow
 
+        //calls loadLocations funcion
         loadLocations()
         
         let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
@@ -39,7 +40,12 @@ class ViewController: UIViewController {
 
         //the region in which users can use the app and upload pictures of bournemouth
         for annotation in annotations {
+<<<<<<< HEAD
+            //sets the radius of the region to 100 in which the user needs to be in in order to upload photos
+            let region = CLCircularRegion(center: annotation.coordinate, radius: 100, identifier: annotation.title!)
+=======
             let region = CLCircularRegion(center: annotation.coordinate, radius: 300, identifier: annotation.title!)
+>>>>>>> 469fe6ace8437ea671e1eb3619303c6a97066501
         locationManager.startMonitoring(for: region)
             print("entered location")
         }
@@ -48,6 +54,7 @@ class ViewController: UIViewController {
     }
     
     //locations in firestore
+    //loadLocations function that is called above
     func loadLocations() {
         let ref = Firestore.firestore().collection("locations")
         ref.getDocuments { snapshot, error in
@@ -84,7 +91,7 @@ class ViewController: UIViewController {
         }
         
 }
-
+//extension to prevent crashes
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let annotation = view.annotation!
