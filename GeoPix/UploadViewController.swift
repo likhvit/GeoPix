@@ -13,6 +13,8 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var uploadDate: UILabel!
     var selectedImage: UIImage?
     
+    var annotations: CustomAnnotation!
+    
     //calls post function
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         post()
@@ -25,7 +27,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         
         upload(selectedImage) { imageName in
             guard let imageName = imageName else { return }
-            let ref = Firestore.firestore().collection("locations").document()
+            let ref = Firestore.firestore().collection("posts").document()
             
             let dict: [String: Any] = [
                 "name": "Bournemouth",
