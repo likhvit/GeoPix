@@ -16,6 +16,7 @@
 		F7D50F3922522AFA005E1586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D50F3722522AFA005E1586 /* Main.storyboard */; };
 		F7D50F3B22522AFB005E1586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D50F3A22522AFB005E1586 /* Assets.xcassets */; };
 		F7D50F3E22522AFB005E1586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D50F3C22522AFB005E1586 /* LaunchScreen.storyboard */; };
+		F7E8C4902282D85800F97A1C /* CLLocationCoordinate2d+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E8C48F2282D85800F97A1C /* CLLocationCoordinate2d+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F7D50F3A22522AFB005E1586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7D50F3D22522AFB005E1586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7D50F3F22522AFB005E1586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E8C48F2282D85800F97A1C /* CLLocationCoordinate2d+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2d+Extension.swift"; sourceTree = "<group>"; };
 		FE372242751D3E85EEE8B439 /* Pods-GeoPix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoPix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeoPix/Pods-GeoPix.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 			children = (
 				F7D50F3322522AFA005E1586 /* AppDelegate.swift */,
 				F7D50F3522522AFA005E1586 /* ViewController.swift */,
+				F7E8C48F2282D85800F97A1C /* CLLocationCoordinate2d+Extension.swift */,
 				F7878781227C34960015E8C2 /* CustomAnnotation.swift */,
 				BBCAD40922771AAA00798BFA /* UploadViewController.swift */,
 				BBE0EB6C225236F300058D36 /* Location.gpx */,
@@ -236,6 +239,7 @@
 			files = (
 				F7D50F3622522AFA005E1586 /* ViewController.swift in Sources */,
 				BBCAD40A22771AAA00798BFA /* UploadViewController.swift in Sources */,
+				F7E8C4902282D85800F97A1C /* CLLocationCoordinate2d+Extension.swift in Sources */,
 				F7D50F3422522AFA005E1586 /* AppDelegate.swift in Sources */,
 				F7878782227C34960015E8C2 /* CustomAnnotation.swift in Sources */,
 			);
