@@ -40,7 +40,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
             
             ref.setData(dict) { error in
                 print("Image uploaded successfully")
-                
+                self.dismiss(animated: true, completion: nil)
             }
             
             
@@ -101,10 +101,6 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         self.dismiss(animated: true, completion: nil)
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! UploadViewController
-        vc.annotations = sender as? CustomAnnotation
-    }
+
     
 }
