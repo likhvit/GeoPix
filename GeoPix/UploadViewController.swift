@@ -42,6 +42,8 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
                 print("Image uploaded successfully")
                 
             }
+            
+            
         }
     }
     
@@ -64,7 +66,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
         meta.contentType = "image/jpeg"
         
         ref.putData(data, metadata: meta) { meta, error in
-            print("upload finsihed")
+            print("upload finished")
             completion(uuid)
         }
     }
