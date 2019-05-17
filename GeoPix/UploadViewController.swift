@@ -42,7 +42,7 @@ class UploadViewController: UIViewController, UINavigationControllerDelegate, UI
                 print("Image uploaded successfully")
                 self.dismiss(animated: true, completion: nil)
             }
-            
+        
             
         }
     }
