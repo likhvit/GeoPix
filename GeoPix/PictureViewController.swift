@@ -3,19 +3,18 @@ import Firebase
 
 class PictureViewController: UIViewController {
     
-    let watcher = PostWatcher(name: "")
-
+    let watcher = ViewController()
+    
+    
     var annotations: CustomAnnotation!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var statusLabel: UILabel!
     
     
     
     override func viewDidLoad() {
         super .viewDidLoad()
         watcher.delegate = self
-        watcher.startWatchingFriends()
+        watcher.loadLocations()
         
     }
     
@@ -26,7 +25,7 @@ class PictureViewController: UIViewController {
     
 }
 
-extension PictureViewController: FriendWatcherDelegate {
+extension PictureViewController: PostDelegate {
     
     func didUpdate() {
         if tableView.numberOfRows(inSection: 0) != watcher.name.count {
@@ -44,14 +43,14 @@ extension PictureViewController: FriendWatcherDelegate {
 extension PictureViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return watcher.name.count
+        return watcher.annotations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let friendForCell = watcher.name[indexPath.row]
-        cell.textLabel?.text = friendForCell.name
-        cell.detailTextLabel?.text = "\(friendForCell.location.latitude) - \(friendForCell.location.longitude)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let postCell = watcher.annotations[indexPath.row]
+        cell.textLabel?.text = postCell.title
+        cell.detailTextLabel?.text = "\(postCell.coordinate.latitude) - \(postCell.coordinate.longitude)"
         return cell
     }
     

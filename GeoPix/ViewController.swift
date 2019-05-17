@@ -3,6 +3,10 @@ import CoreLocation
 import MapKit
 import Firebase
 
+protocol PostDelegate {
+  func didUpdate()
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -10,6 +14,9 @@ class ViewController: UIViewController {
     let locationManager = CLLocationManager()
     var uploadImage = false
     var annotations = [CustomAnnotation]()
+    var name: String!
+    
+    var delegate: PostDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,16 +65,12 @@ class ViewController: UIViewController {
             for document in snapshot!.documents {
                 let annotation = CustomAnnotation(document: document)
                 self.annotations.append(annotation)
-                self.mapView.addAnnotation(annotation)
             }
+            self.delegate?.didUpdate()
         }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        uploadImage = false
-//    }
-//
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! PictureViewController
         vc.annotations = sender as? CustomAnnotation
@@ -75,8 +78,8 @@ class ViewController: UIViewController {
 
 }
 
-    //extension which is needed to prevent errors
-    extension ViewController: CLLocationManagerDelegate {
+//extension which is needed to prevent errors
+extension ViewController: CLLocationManagerDelegate {
         
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             guard let userlocation = locations.last else { return }

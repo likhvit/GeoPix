@@ -136,28 +136,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yz4-Q2-WP1" id="2Zr-LB-OUs">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d4I-aE-dag">
-                                                    <rect key="frame" x="15" y="-2" width="85" height="45"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="85" id="aCs-JI-bBl"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdW-0J-354">
-                                                    <rect key="frame" x="166" y="5" width="42" height="32"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="d4I-aE-dag" firstAttribute="leading" secondItem="2Zr-LB-OUs" secondAttribute="leadingMargin" constant="-1" id="2vA-mX-ldA"/>
-                                                <constraint firstItem="bdW-0J-354" firstAttribute="centerY" secondItem="2Zr-LB-OUs" secondAttribute="centerY" id="QrE-Ht-bUk"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="d4I-aE-dag" secondAttribute="bottom" constant="-10" id="VwI-cG-yc4"/>
-                                                <constraint firstItem="bdW-0J-354" firstAttribute="leading" secondItem="d4I-aE-dag" secondAttribute="trailing" constant="75" id="hEt-fP-1aZ"/>
-                                                <constraint firstItem="bdW-0J-354" firstAttribute="bottom" secondItem="2Zr-LB-OUs" secondAttribute="bottomMargin" id="mCY-9V-xM3"/>
-                                                <constraint firstItem="d4I-aE-dag" firstAttribute="top" secondItem="2Zr-LB-OUs" secondAttribute="topMargin" constant="-33" id="nNr-HV-Dfx"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -180,8 +158,6 @@
                         <viewLayoutGuide key="safeArea" id="Iwh-gP-hUC"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="d4I-aE-dag" id="41W-NB-KIV"/>
-                        <outlet property="statusLabel" destination="bdW-0J-354" id="bGg-Am-2bb"/>
                         <outlet property="tableView" destination="oCA-Sr-URN" id="CUW-0R-qnC"/>
                     </connections>
                 </viewController>
