@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         //calls loadLocations funcion
         loadLocations()
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50.721972, longitude: -1.873795), span: span)
         //sets the map to the Region and it is animated as it moves to it
 
