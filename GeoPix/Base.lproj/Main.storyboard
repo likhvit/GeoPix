@@ -30,15 +30,8 @@
                                     <action selector="importButtonWithSender:" destination="vUD-VI-1xW" eventType="touchUpInside" id="ygu-OR-eCg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os0-9B-3Da">
-                                <rect key="frame" x="18" y="582" width="68" height="65"/>
-                                <state key="normal" title="Post" image="GeoPix Logo icon"/>
-                                <connections>
-                                    <action selector="postButton:" destination="vUD-VI-1xW" eventType="touchUpInside" id="L9v-gB-3cS"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eh-tz-TzZ">
-                                <rect key="frame" x="20" y="181" width="335" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eh-tz-TzZ">
+                                <rect key="frame" x="20" y="546" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -46,21 +39,34 @@
                                     <action selector="quoteWriter:" destination="vUD-VI-1xW" eventType="editingDidEnd" id="1BB-mE-M8S"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os0-9B-3Da">
+                                <rect key="frame" x="37" y="594" width="41" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="DYW-Hv-nIE"/>
+                                </constraints>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="postButton:" destination="vUD-VI-1xW" eventType="touchUpInside" id="L9v-gB-3cS"/>
+                                    <segue destination="Jwq-Qs-7WJ" kind="show" identifier="display" id="ew6-jH-B4t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="os0-9B-3Da" firstAttribute="top" secondItem="U8p-hV-OSO" secondAttribute="bottom" constant="99" id="0cq-fB-e5u"/>
+                            <constraint firstItem="os0-9B-3Da" firstAttribute="leading" secondItem="1J2-UW-O8p" secondAttribute="leading" constant="37" id="0f6-Xz-4fe"/>
+                            <constraint firstItem="6eh-tz-TzZ" firstAttribute="leading" secondItem="1J2-UW-O8p" secondAttribute="leading" constant="20" id="0pa-7d-WIi"/>
                             <constraint firstItem="O54-6D-1Ik" firstAttribute="top" secondItem="U8p-hV-OSO" secondAttribute="bottom" constant="3" id="2c0-a3-4hD"/>
-                            <constraint firstItem="1J2-UW-O8p" firstAttribute="trailing" secondItem="os0-9B-3Da" secondAttribute="trailing" constant="289" id="D8K-td-uWu"/>
-                            <constraint firstItem="os0-9B-3Da" firstAttribute="leading" secondItem="1J2-UW-O8p" secondAttribute="leading" constant="18" id="DRJ-mc-8qy"/>
+                            <constraint firstItem="1J2-UW-O8p" firstAttribute="trailing" secondItem="os0-9B-3Da" secondAttribute="trailing" constant="297" id="9Cv-nf-2S2"/>
                             <constraint firstItem="O54-6D-1Ik" firstAttribute="leading" secondItem="1J2-UW-O8p" secondAttribute="leading" constant="131" id="Lul-Bz-Qm4"/>
                             <constraint firstItem="U8p-hV-OSO" firstAttribute="leading" secondItem="S2g-Wx-lRk" secondAttribute="leading" id="OEZ-3k-Hc9"/>
-                            <constraint firstItem="6eh-tz-TzZ" firstAttribute="leading" secondItem="1J2-UW-O8p" secondAttribute="leading" constant="20" id="UAK-rl-dzj"/>
                             <constraint firstItem="1J2-UW-O8p" firstAttribute="trailing" secondItem="O54-6D-1Ik" secondAttribute="trailing" constant="135" id="XBO-Vc-SjN"/>
+                            <constraint firstItem="os0-9B-3Da" firstAttribute="top" secondItem="6eh-tz-TzZ" secondAttribute="bottom" constant="18" id="XNg-9G-n5P"/>
+                            <constraint firstItem="6eh-tz-TzZ" firstAttribute="centerX" secondItem="U8p-hV-OSO" secondAttribute="centerX" id="bSc-c6-bte"/>
                             <constraint firstItem="U8p-hV-OSO" firstAttribute="top" secondItem="S2g-Wx-lRk" secondAttribute="top" id="dTr-yZ-8vx"/>
                             <constraint firstAttribute="trailing" secondItem="U8p-hV-OSO" secondAttribute="trailing" id="kPf-Fp-lCB"/>
-                            <constraint firstItem="6eh-tz-TzZ" firstAttribute="centerX" secondItem="U8p-hV-OSO" secondAttribute="centerX" id="oe6-zx-BdL"/>
-                            <constraint firstAttribute="bottom" secondItem="os0-9B-3Da" secondAttribute="bottom" constant="20" symbolic="YES" id="sxW-nh-a0d"/>
+                            <constraint firstItem="6eh-tz-TzZ" firstAttribute="top" secondItem="O54-6D-1Ik" secondAttribute="bottom" constant="30" id="m7g-uo-dBo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1J2-UW-O8p"/>
                     </view>
@@ -125,7 +131,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZa-YR-fgw">
-                                <rect key="frame" x="157" y="93" width="61" height="30"/>
+                                <rect key="frame" x="157" y="49" width="61" height="30"/>
                                 <state key="normal" title="UPLOAD"/>
                                 <connections>
                                     <action selector="uploadButton:" destination="g9e-hH-NYv" eventType="touchUpInside" id="1U7-3O-ADD"/>
@@ -265,7 +271,7 @@
             <point key="canvasLocation" x="-380" y="204"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="GeoPix Logo icon" width="402" height="402"/>
-    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ew6-jH-B4t"/>
+    </inferredMetricsTieBreakers>
 </document>
